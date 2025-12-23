@@ -1,2 +1,0 @@
-run = "dart run main.dart"
-entrypoint = "main.dart"

@@ -1,75 +1,82 @@
 # Avengers RPG Console · Dart
 
-Dart로 만든 텍스트 기반 RPG 학습 프로젝트입니다. 캐릭터·몬스터·스킬을 객체로 분리하고, 턴제 전투와 저장/불러오기 흐름을 구현하면서 **게임 상태와 도메인 객체를 분리하는 구조**를 연습했습니다.
+**A turn-based Avengers RPG that began as an interactive Dart CLI and now includes a browser-based portfolio demo.**
 
-A text-based RPG written in Dart to practice **domain entities, game state, turn-based combat, persistence, and service separation**.
+Dart 기초 이후 캐릭터·몬스터·스킬·게임 상태·저장/불러오기를 역할별로 분리해 구현한 텍스트 RPG입니다. 원본 CLI를 그대로 보존하면서, 핵심 전투 흐름을 별도의 React/TypeScript 웹 데모로 재구성했습니다.
 
 <p align="center">
   <img src=".github/assets/portfolio/terminal-demo.gif" width="100%" alt="Avengers RPG Console interactive terminal demo" />
 </p>
 
 <p align="center">
-  <a href="https://replit.com/github.com/oosuhada/rpggame_console"><strong>▶ Run in Replit / 브라우저에서 직접 실행</strong></a>
+  <a href="https://rpg.oosu.dev"><strong>▶ Play in Browser / 브라우저에서 플레이</strong></a>
 </p>
 
-## 한국어
+## 주요 기능 / Features
 
-### 주요 기능
+- 한국어/영어 언어 선택이 가능한 원본 Dart CLI
+- Avengers 캐릭터 선택과 캐릭터별 능력치·스킬
+- HP / MP 기반 턴제 전투
+- 기본 공격, 방어, 회복 아이템, 스킬 사용
+- 데이터 기반 캐릭터·몬스터·스킬 로딩
+- 레벨업과 경험치 흐름
+- 게임 상태 저장 및 불러오기
+- 브라우저 데모의 localStorage 기반 run / history persistence
+- desktop / mobile responsive browser UI
 
-- 한국어/영어 언어 선택
-- Avengers 캐릭터 선택
-- 레벨업과 스킬 강화
-- 턴제 전투
-- 공격·방어·아이템 등 행동 선택
-- 몬스터/빌런 데이터 로딩
-- 게임 저장 및 불러오기
-
-### 프로젝트 구조
+## Architecture
 
 ```text
-main.dart                       # 게임 진입점
-core/
-├── game_engine.dart           # 전체 게임 진행
-├── battle_system.dart         # 전투 규칙
-└── game_state.dart            # 현재 게임 상태
-entities/
-├── character.dart
-├── monster.dart
-└── skill.dart
-services/
-├── input_output.dart          # 콘솔 I/O
-└── save_load_service.dart     # 저장/불러오기
-data/                           # 캐릭터, 몬스터, 스킬, 결과 데이터
+rpggame_console/
+├── main.dart                       # Original CLI entry point
+├── core/
+│   ├── game_engine.dart            # Game flow
+│   ├── battle_system.dart          # Battle rules
+│   └── game_state.dart             # Runtime game state
+├── entities/
+│   ├── character.dart
+│   ├── monster.dart
+│   └── skill.dart
+├── services/
+│   ├── input_output.dart           # Console I/O
+│   └── save_load_service.dart      # Persistence
+├── data/                            # Character / monster / skill data
+└── web/                             # Browser portfolio demo
+    ├── src/
+    ├── tests/                       # Playwright interaction smoke tests
+    ├── package.json
+    └── vite.config.ts
 ```
 
-제품형 게임이 아니라 Dart 기초 이후 여러 클래스를 실제 도메인 역할별로 분리해 본 초기 구조 연습 프로젝트입니다.
+원본 프로젝트의 핵심은 Dart에서 **도메인 객체, 전투 규칙, 게임 상태, 입출력, persistence를 분리한 multi-file architecture**입니다.
 
-## English
+The original project is an early multi-file Dart application focused on separating **domain entities, battle rules, mutable game state, console I/O, and persistence**.
 
-### Features
+## Run the original CLI
 
-- Korean/English language selection
-- Playable Avengers character selection
-- Character leveling and skill upgrades
-- Turn-based battle loop
-- Attack, defense, and item actions
-- Data-driven character, monster, and skill loading
-- Save/load support
-
-### What this project demonstrates
-
-This is an early learning project rather than a production game. It documents the point where my Dart practice moved from small exercises into a multi-file application with explicit entities, engine logic, services, and persistent state.
-
-## Run locally
-
-With the Dart SDK installed:
+Dart SDK가 설치된 환경에서:
 
 ```bash
 dart run main.dart
 ```
 
-## Try in browser / 브라우저에서 실행
+위 terminal GIF는 이 원본 CLI의 실제 interaction을 보여줍니다.
 
-The Replit link above imports this public repository with the Dart runtime configured so the Run action launches the same interactive CLI from the browser console.
+## Browser Demo
 
-위 **Run in Replit** 링크를 열면 공개 저장소를 브라우저 환경으로 가져오며, Run을 누르면 동일한 터미널 게임을 직접 조작할 수 있습니다.
+Live: **https://rpg.oosu.dev**
+
+The browser demo is a **React/TypeScript recreation of the original interaction model**. It does not execute the Dart CLI source directly in the browser. Instead, it translates the same portfolio idea—character selection, turn-based combat, HP/MP, defense, items, skills, game state, and persistence—into a responsive interactive web experience.
+
+웹 데모는 기존 Dart 코드를 브라우저에서 그대로 실행하는 구조가 아니라, **원본 CLI의 핵심 상호작용을 React/TypeScript로 재현한 포트폴리오 버전**입니다. 원본 Dart 구현과 웹 데모를 함께 두어 초기 구조 설계와 이후의 인터랙션 확장을 모두 확인할 수 있도록 구성했습니다.
+
+### Web validation
+
+```bash
+cd web
+npm install
+npm run lint
+npm run typecheck
+npm run build
+npm run test:e2e
+```
