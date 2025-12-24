@@ -9,7 +9,7 @@ Dart 기초 이후 캐릭터·몬스터·스킬·게임 상태·저장/불러오
 </p>
 
 <p align="center">
-  <a href="https://rpg.oosu.dev"><strong>▶ Play in Browser / 브라우저에서 플레이</strong></a>
+  <a href="https://flutter.oosu.dev/rpg_console/"><strong>▶ Play in Browser / 브라우저에서 플레이</strong></a>
 </p>
 
 ## 주요 기능 / Features
@@ -64,7 +64,7 @@ dart run main.dart
 
 ## Browser Demo
 
-Live: **https://rpg.oosu.dev**
+Live: **https://flutter.oosu.dev/rpg_console/**
 
 The browser demo is a **React/TypeScript recreation of the original interaction model**. It does not execute the Dart CLI source directly in the browser. Instead, it translates the same portfolio idea—character selection, turn-based combat, HP/MP, defense, items, skills, game state, and persistence—into a responsive interactive web experience.
 

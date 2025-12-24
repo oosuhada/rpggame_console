@@ -12,7 +12,7 @@ function watchRuntimeErrors(page: Page) {
 test('desktop combat flow, local save, items, and restart work', async ({ page }) => {
   const errors = watchRuntimeErrors(page);
   await page.setViewportSize({ width: 1440, height: 1000 });
-  await page.goto('/');
+  await page.goto('./');
   await expect(page).toHaveTitle(/Avengers RPG Console/);
   await page.getByTestId('button-deploy-hero').click();
   await expect(page.getByTestId('panel-action-dock')).toBeVisible();
@@ -40,7 +40,7 @@ test('desktop combat flow, local save, items, and restart work', async ({ page }
 test('mobile selection and battle stay inside the viewport', async ({ page }) => {
   const errors = watchRuntimeErrors(page);
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto('/');
+  await page.goto('./');
   await expect(page.getByTestId('hero-selection-grid')).toBeVisible();
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
   await page.getByTestId('button-deploy-hero').click();

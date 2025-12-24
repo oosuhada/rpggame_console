@@ -8,6 +8,7 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   root,
+  base: '/rpg_console/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
