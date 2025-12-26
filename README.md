@@ -81,6 +81,13 @@ npm run build
 npm run test:e2e
 ```
 
-## Topics
+## Architecture & Topics / 아키텍처 및 주제
 
-[`browser-game`](https://github.com/topics/browser-game) · [`cli`](https://github.com/topics/cli) · [`dart`](https://github.com/topics/dart) · [`react`](https://github.com/topics/react) · [`rpg`](https://github.com/topics/rpg) · [`turn-based-game`](https://github.com/topics/turn-based-game) · [`typescript`](https://github.com/topics/typescript) · [`vite`](https://github.com/topics/vite) · [`game-development`](https://github.com/topics/game-development) · [`web-game`](https://github.com/topics/web-game) · [`turn-based`](https://github.com/topics/turn-based) · [`console-game`](https://github.com/topics/console-game) · [`game`](https://github.com/topics/game) · [`frontend`](https://github.com/topics/frontend) · [`role-playing-game`](https://github.com/topics/role-playing-game) · [`dart-game`](https://github.com/topics/dart-game)
+**Architecture / 아키텍처**<br>
+[`finite-state-machine`](https://github.com/topics/finite-state-machine) · [`command-pattern`](https://github.com/topics/command-pattern) · [`turn-based-loop`](https://github.com/topics/turn-based-loop) · [`domain-model`](https://github.com/topics/domain-model) · [`component-based-ui`](https://github.com/topics/component-based-ui) · [`client-side-rendering`](https://github.com/topics/client-side-rendering)
+
+**Project context / 프로젝트 맥락**<br>
+[`browser-game`](https://github.com/topics/browser-game) · [`cli`](https://github.com/topics/cli) · [`console-game`](https://github.com/topics/console-game) · [`dart-game`](https://github.com/topics/dart-game) · [`frontend`](https://github.com/topics/frontend) · [`game`](https://github.com/topics/game) · [`game-development`](https://github.com/topics/game-development) · [`role-playing-game`](https://github.com/topics/role-playing-game) · [`rpg`](https://github.com/topics/rpg) · [`turn-based`](https://github.com/topics/turn-based) · [`turn-based-game`](https://github.com/topics/turn-based-game) · [`web-game`](https://github.com/topics/web-game)
+
+**Implementation stack / 구현 스택**<br>
+[`dart`](https://github.com/topics/dart) · [`react`](https://github.com/topics/react) · [`typescript`](https://github.com/topics/typescript) · [`vite`](https://github.com/topics/vite)
